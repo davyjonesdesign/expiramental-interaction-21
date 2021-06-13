@@ -32,12 +32,12 @@ function draw1() {
     square(random(width), random(height), random(100), random(25));
   }
   fill(random(255), random(255), random(255));
-  strokeWeight(40);
+  strokeWeight(10);
   stroke(255);
-  textSize(random(250, 275));
+  textSize(50);
   textFont("hwt-mardell");
   textAlign(CENTER);
-  text("Esc", 0, 300, width);
+  text("insert info about escapism", 0, 300, width);
 }
 
 // 2nd styled drawing
@@ -47,10 +47,10 @@ function draw2() {
   background(100);
   fill(255);
   rect(x, y, d, d);
-  textSize(200);
+  textSize(50);
   textFont("flyswim");
   textAlign(CENTER);
-  text("Esc", 0, 300, width);
+  text("insert info about escapism", 0, 300, width);
 }
 
 // 3rd styled drawing
@@ -60,10 +60,10 @@ function draw3() {
   background(200);
   fill(0);
   ellipse(x, y, d, d);
-  textSize(200);
+  textSize(50);
   textFont("forgotten-futurist-shadow");
   textAlign(CENTER);
-  text("ESC", 0, 300, width);
+  text("insert info about escapism", 0, 300, width);
 }
 
 // 4th styled drawing
@@ -73,10 +73,10 @@ function draw4() {
   background(25);
   fill(150);
   ellipse(x, y, d, d);
-  textSize(200);
+  textSize(50);
   textFont("volina");
   textAlign(CENTER);
-  text("Esc", 0, 300, width);
+  text("insert info about escapism", 0, 300, width);
 }
 
 // call drawings per state status
@@ -91,6 +91,9 @@ function draw() {
     textFont("volina");
     textAlign(CENTER);
     text("Esc", 0, 300, width);
+    textSize(50);
+    text("insert intro to escapism", 0, 600, width);
+
   } else if (state) {
     draw1();
   } else if (state2) {
