@@ -126,6 +126,6 @@ function keyReleased() {
   } else if (keyCode === ESCAPE && state4 === true) {
     loop();
     state4 = !state4;
-    state = true;
+    stateDefault = true;
   }
 }
