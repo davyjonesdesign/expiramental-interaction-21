@@ -1,17 +1,4 @@
-@import url("https://use.typekit.net/oee2yom.css");
-body {
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #f4f4f4;
-  color: #323232;
-  font-family: monospace;
-}
-h1 {
-  margin: 20px 0 0;
-}
-p {
-  margin-bottom: 30px;
+html, body {
+  margin: 0;
+  overflow: hidden;
 }
