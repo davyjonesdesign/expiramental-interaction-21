@@ -1,7 +1,7 @@
 // variables
 let c1, c2;
-var stateDefault = true;
-var state = false;
+var state0 = true;
+var state1 = false;
 var state2 = false;
 var state3 = false;
 var state4 = false;
@@ -50,7 +50,7 @@ function setGradient (x, y, w, h, c1, c2, axis) {
 // -------------------------
 
 // default styled Drawing
-function drawDefault () {
+function draw0 () {
   noLoop();
   setGradient(0, 0, width, height, c1, c2, 2);
 
@@ -235,9 +235,9 @@ function draw4 () {}
 
 // call drawings per state status
 function draw () {
-  if (stateDefault) {
-    drawDefault();
-  } else if (state) {
+  if (state0) {
+    draw0();
+  } else if (state1) {
     draw1();
   } else if (state2) {
     draw2();
@@ -250,13 +250,13 @@ function draw () {
 
 // escape key input to change state status
 function keyReleased () {
-  if (keyCode === ESCAPE && stateDefault === true) {
+  if (keyCode === ESCAPE && state0 === true) {
     loop();
-    stateDefault = !stateDefault;
-    state = true;
-  } else if (keyCode === ESCAPE && state === true) {
+    state0 = !state0;
+    state1 = true;
+  } else if (keyCode === ESCAPE && state1 === true) {
     loop();
-    state = !state;
+    state1 = !state1;
     state2 = true;
   } else if (keyCode === ESCAPE && state2 === true) {
     loop();
@@ -269,6 +269,6 @@ function keyReleased () {
   } else if (keyCode === ESCAPE && state4 === true) {
     loop();
     state4 = !state4;
-    stateDefault = true;
+    state0 = true;
   }
 }
