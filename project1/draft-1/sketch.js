@@ -9,7 +9,7 @@ var state4 = false;
 // -------------------------
 
 // setup canvas window
-function setup () {
+function setup() {
   createCanvas(windowWidth, windowHeight);
   c1 = color(38, 31, 50);
   c2 = color(0, 0, 0);
@@ -19,7 +19,7 @@ function setup () {
 
 // extra drawings
 // star
-function star (x, y, radius1, radius2, npoints) {
+function star(x, y, radius1, radius2, npoints) {
   const angle = TWO_PI / npoints;
   const halfAngle = angle / 2.0;
   beginShape();
@@ -35,7 +35,7 @@ function star (x, y, radius1, radius2, npoints) {
 }
 
 // gradient
-function setGradient (x, y, w, h, c1, c2, axis) {
+function setGradient(x, y, w, h, c1, c2, axis) {
   noFill();
   // Left to right gradient
   for (let i = x; i <= x + w; i++) {
@@ -50,7 +50,7 @@ function setGradient (x, y, w, h, c1, c2, axis) {
 // -------------------------
 
 // default styled Drawing
-function draw0 () {
+function draw0() {
   noLoop();
   setGradient(0, 0, width, height, c1, c2, 2);
 
@@ -138,29 +138,29 @@ function draw0 () {
   // text
 
   textSize(50);
-  textFont('Limelight');
+  textFont("Limelight");
   textAlign(CENTER);
 
   // text shadow
   strokeWeight(6);
   stroke(0, 0, 0, 100);
   noFill();
-  text('E', -62, height / 2 - textSize() / 2 + 5, width);
-  text('S', 0, height / 2 - textSize() / 2 + 5, width);
-  text('C', 67, height / 2 - textSize() / 2 + 5, width);
+  text("E", -62, height / 2 - textSize() / 2 + 5, width);
+  text("S", 0, height / 2 - textSize() / 2 + 5, width);
+  text("C", 67, height / 2 - textSize() / 2 + 5, width);
 
   stroke(255, 255, 255, 50);
   noStroke();
   fill(255, 220, 140);
-  text('E', -60, height / 2 - textSize() / 2, width);
-  text('S', 0, height / 2 - textSize() / 2, width);
-  text('C', 65, height / 2 - textSize() / 2, width);
+  text("E", -60, height / 2 - textSize() / 2, width);
+  text("S", 0, height / 2 - textSize() / 2, width);
+  text("C", 65, height / 2 - textSize() / 2, width);
 }
 
 // -------------------------
 
 // 1st styled drawing
-function draw1 () {
+function draw1() {
   noLoop();
 
   // squares background
@@ -211,30 +211,60 @@ function draw1 () {
   stroke(56, 53, 54, 200);
   strokeWeight(3);
   textSize(60);
-  textFont('Geostar Fill');
+  textFont("Geostar Fill");
   textAlign(CENTER);
-  text('esc', 8, height / 2 - textSize() / 2 - 4, width);
+  text("esc", 8, height / 2 - textSize() / 2 - 4, width);
 }
 
 // -------------------------
 
 // 2nd styled drawing
-function draw2 () {}
+function draw2() {
+  noLoop();
+  noStroke();
+  background(0);
+  fill(200);
+  ellipse(x, y, d, d);
+  textSize(40);
+  textFont("Geostar Fill");
+  textAlign(CENTER);
+  text("Esc(template)", 0, height / 2 - textSize() / 2, width);
+}
 
 // -------------------------
 
 // 3rd styled drawing
-function draw3 () {}
+function draw3() {
+  noLoop();
+  noStroke();
+  background(50);
+  fill(200);
+  ellipse(x, y, d, d);
+  textSize(40);
+  textFont("Geostar Fill");
+  textAlign(CENTER);
+  text("Esc(template)", 0, height / 2 - textSize() / 2, width);
+}
 
 // -------------------------
 
 // 4th styled drawing
-function draw4 () {}
+function draw4() {
+  noLoop();
+  noStroke();
+  background(100);
+  fill(200);
+  ellipse(x, y, d, d);
+  textSize(40);
+  textFont("Geostar Fill");
+  textAlign(CENTER);
+  text("Esc(template)", 0, height / 2 - textSize() / 2, width);
+}
 
 // -------------------------
 
 // call drawings per state status
-function draw () {
+function draw() {
   if (state0) {
     draw0();
   } else if (state1) {
@@ -249,7 +279,7 @@ function draw () {
 }
 
 // escape key input to change state status
-function keyReleased () {
+function keyReleased() {
   if (keyCode === ESCAPE && state0 === true) {
     loop();
     state0 = !state0;
