@@ -9,7 +9,7 @@ var state4 = false;
 // -------------------------
 
 // setup canvas window
-function setup() {
+function setup () {
   createCanvas(windowWidth, windowHeight);
   c1 = color(38, 31, 50);
   c2 = color(0, 0, 0);
@@ -19,7 +19,7 @@ function setup() {
 
 // extra drawings
 // star
-function star(x, y, radius1, radius2, npoints) {
+function star (x, y, radius1, radius2, npoints) {
   const angle = TWO_PI / npoints;
   const halfAngle = angle / 2.0;
   beginShape();
@@ -35,7 +35,7 @@ function star(x, y, radius1, radius2, npoints) {
 }
 
 // gradient
-function setGradient(x, y, w, h, c1, c2, axis) {
+function setGradient (x, y, w, h, c1, c2, axis) {
   noFill();
   // Left to right gradient
   for (let i = x; i <= x + w; i++) {
@@ -50,7 +50,7 @@ function setGradient(x, y, w, h, c1, c2, axis) {
 // -------------------------
 
 // default styled Drawing
-function drawDefault() {
+function drawDefault () {
   noLoop();
   setGradient(0, 0, width, height, c1, c2, 2);
 
@@ -138,49 +138,103 @@ function drawDefault() {
   // text
 
   textSize(50);
-  textFont("Limelight");
+  textFont('Limelight');
   textAlign(CENTER);
 
   // text shadow
   strokeWeight(6);
   stroke(0, 0, 0, 100);
   noFill();
-  text("E", -62, height / 2 - textSize() / 2 + 5, width);
-  text("S", 0, height / 2 - textSize() / 2 + 5, width);
-  text("C", 67, height / 2 - textSize() / 2 + 5, width);
+  text('E', -62, height / 2 - textSize() / 2 + 5, width);
+  text('S', 0, height / 2 - textSize() / 2 + 5, width);
+  text('C', 67, height / 2 - textSize() / 2 + 5, width);
 
   stroke(255, 255, 255, 50);
   noStroke();
   fill(255, 220, 140);
-  text("E", -60, height / 2 - textSize() / 2, width);
-  text("S", 0, height / 2 - textSize() / 2, width);
-  text("C", 65, height / 2 - textSize() / 2, width);
+  text('E', -60, height / 2 - textSize() / 2, width);
+  text('S', 0, height / 2 - textSize() / 2, width);
+  text('C', 65, height / 2 - textSize() / 2, width);
 }
 
 // -------------------------
 
 // 1st styled drawing
-function draw1() {}
+function draw1 () {
+  noLoop();
+
+  // squares background
+  for (var y = 1; y <= height; y += 240) {
+    for (var x = 0; x <= width; x += 120) {
+      stroke(163, 183, 192);
+      strokeWeight(3);
+      fill(56, 53, 54);
+      rect(x, y, 60);
+      strokeWeight(4);
+      fill(228, 220, 202);
+      rect(x + 60, y, 60);
+    }
+  }
+  for (var y = 61; y <= height; y += 120) {
+    for (var x = -105; x <= width; x += 120) {
+      stroke(163, 183, 192);
+      strokeWeight(3);
+      fill(56, 53, 54);
+      rect(x, y, 60);
+      strokeWeight(4);
+      fill(228, 220, 202);
+      rect(x + 60, y, 60);
+    }
+  }
+  for (var y = 121; y <= height; y += 240) {
+    for (var x = -90; x <= width; x += 120) {
+      stroke(163, 183, 192);
+      strokeWeight(3);
+      fill(56, 53, 54);
+      rect(x, y, 60);
+      strokeWeight(4);
+      fill(228, 220, 202);
+      rect(x + 60, y, 60);
+    }
+  }
+  // text box
+  fill(163, 183, 192);
+  strokeWeight();
+  rect(width / 2 - 85, height / 2 - 35, 170, 70);
+  stroke(56, 53, 54);
+  strokeWeight(4);
+  fill(228, 220, 202);
+  rect(width / 2 - 75, height / 2 - 25, 150, 50);
+
+  // text
+  fill(56, 53, 54);
+  stroke(56, 53, 54, 200);
+  strokeWeight(3);
+  textSize(60);
+  textFont('Geostar Fill');
+  textAlign(CENTER);
+  text('esc', 8, height / 2 - textSize() / 2 - 4, width);
+}
 
 // -------------------------
 
 // 2nd styled drawing
-function draw2() {}
+function draw2 () {}
 
 // -------------------------
 
 // 3rd styled drawing
-function draw2() {}
+function draw3 () {}
 
 // -------------------------
 
 // 4th styled drawing
-function draw2() {}
+function draw4 () {}
 
 // -------------------------
 
 // call drawings per state status
-function draw() {
+function draw () {
   if (stateDefault) {
     drawDefault();
   } else if (state) {
@@ -195,7 +249,7 @@ function draw() {
 }
 
 // escape key input to change state status
-function keyReleased() {
+function keyReleased () {
   if (keyCode === ESCAPE && stateDefault === true) {
     loop();
     stateDefault = !stateDefault;
