@@ -1,7 +1,4 @@
 // setting variables
-var x = 300;
-var y = 200;
-var d = 50;
 let c1, c2;
 var stateDefault = true;
 var state = false;
@@ -9,12 +6,44 @@ var state2 = false;
 var state3 = false;
 var state4 = false;
 
+// star
+function star (x, y, radius1, radius2, npoints) {
+  const angle = TWO_PI / npoints;
+  const halfAngle = angle / 2.0;
+  beginShape();
+  for (let a = 0; a < TWO_PI; a += angle) {
+    let sx = x + cos(a) * radius2;
+    let sy = y + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(a + halfAngle) * radius1;
+    sy = y + sin(a + halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
+
+// gradient
+function setGradient (x, y, w, h, c1, c2, axis) {
+  noFill();
+    // Left to right gradient
+  for (let i = x; i <= x + w; i++) {
+    const inter = map(i, x, x + w, 0, 1);
+    const c = lerpColor(c1, c2, inter);
+    stroke(c);
+    line(i, y, i, y + h);
+    line(x, i, x + w, i);
+  }
+}
+
+
 // setup canvas window
 function setup () {
   createCanvas(windowWidth, windowHeight);
   c1 = color(38, 31, 50);
   c2 = color(0, 0, 0);
 }
+
+
 // default styled Drawing
 function drawDefault () {
   noLoop();
@@ -99,34 +128,7 @@ function draw1 () {
   text('Esc', 0, 300, width);
 }
 
-// star
-function star (x, y, radius1, radius2, npoints) {
-  const angle = TWO_PI / npoints;
-  const halfAngle = angle / 2.0;
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += angle) {
-    let sx = x + cos(a) * radius2;
-    let sy = y + sin(a) * radius2;
-    vertex(sx, sy);
-    sx = x + cos(a + halfAngle) * radius1;
-    sy = y + sin(a + halfAngle) * radius1;
-    vertex(sx, sy);
-  }
-  endShape(CLOSE);
-}
 
-// gradient
-function setGradient (x, y, w, h, c1, c2, axis) {
-  noFill();
-    // Left to right gradient
-  for (let i = x; i <= x + w; i++) {
-    const inter = map(i, x, x + w, 0, 1);
-    const c = lerpColor(c1, c2, inter);
-    stroke(c);
-    line(i, y, i, y + h);
-    line(x, i, x + w, i);
-  }
-}
 
 // 2nd styled drawing
 function draw2 () {
