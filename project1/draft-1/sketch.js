@@ -47,6 +47,50 @@ function setGradient(x, y, w, h, c1, c2, axis) {
   }
 }
 
+// pop art tile
+function popArt(x, y, w, h, r, g, b, r2, g2, b2) {
+  rect(x, y, w, h);
+  noStroke();
+
+  // mouth
+
+  // top lip
+  fill(r2, g2, b2);
+  arc(w / 4 + x + w / 24, h / 2 + y, w / 6, 60, PI, 0);
+  arc(w / 4 + x + w / 8, h / 2 + y, w / 6, 60, PI, 0);
+
+  // bottom lip
+  arc(w / 3 + x, h / 2 + y, w / 4, 145, 0, PI);
+
+  // inner mouth
+  fill(r, g, b);
+  arc(w / 3 + x, h / 2 + y - 1, w / 4 - w / 48, 100, 0, PI);
+
+  //   teeth
+  fill(r2, g2, b2);
+  arc(w / 3 + x, h / 2 + y + 7, w / 4 - w / 22, h / 12, 0, PI);
+  rect(w / 4 + x - w / 52, h / 2 + y + h / 90, w / 4 - w / 22, h / 64);
+  // toungue
+  arc(w / 3 + x, (2 * h) / 3 + y - h / 36, w / 16, 25, PI, 0);
+  // outline
+  noFill();
+  stroke(r, g, b);
+  strokeWeight(4);
+  arc(w / 3 + x, h / 2 + y - 1, w / 4 - w / 48, 100, 0, PI);
+
+  // speech bubble
+  fill(r2, g2, b2);
+  ellipse((2 * w) / 3 + x, h / 3 + y, w / 3, h / 2);
+  ellipse(w / 2 + x + w / 48, h / 2 + y + h / 24, w / 16, h / 10);
+  ellipse(w / 2 + x - w / 48, h / 2 + y + h / 12, w / 32, h / 20);
+
+  textSize(60);
+  textFont("Bangers");
+  strokeWeight(10);
+  stroke(r, g, b);
+  text("ESC!", x + w / 6, h / 3 - textSize() / 2 + y + 2, w);
+}
+
 // -------------------------
 
 // default styled Drawing
@@ -221,14 +265,144 @@ function draw1() {
 // 2nd styled drawing
 function draw2() {
   noLoop();
-  noStroke();
   background(0);
-  fill(200);
-  ellipse(x, y, d, d);
-  textSize(40);
-  textFont("Geostar Fill");
-  textAlign(CENTER);
-  text("Esc(template)", 0, height / 2 - textSize() / 2, width);
+  noStroke();
+
+  // col 1
+  push();
+  fill(255, 253, 10);
+  popArt(0, 0, width / 3 + 0.33, height / 3 + 0.33, 141, 188, 14, 42, 36, 126);
+  pop();
+
+  push();
+  fill(247, 133, 10);
+  popArt(
+    0,
+    height / 3,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    122,
+    191,
+    248,
+    121,
+    68,
+    150
+  );
+  pop();
+
+  push();
+  fill(34, 110, 98);
+  popArt(
+    0,
+    (2 * height) / 3,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    254,
+    251,
+    232,
+    233,
+    7,
+    133
+  );
+  pop();
+
+  // col 2
+  push();
+  fill(3, 131, 240);
+  popArt(
+    width / 3,
+    0,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    248,
+    249,
+    109,
+    229,
+    6,
+    123
+  );
+  pop();
+
+  push();
+  fill(228, 13, 31);
+  popArt(
+    width / 3,
+    height / 3,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    248,
+    246,
+    248,
+    33,
+    33,
+    35
+  );
+  pop();
+
+  push();
+  fill(255, 250, 8);
+  popArt(
+    width / 3,
+    (2 * height) / 3,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    159,
+    194,
+    52,
+    250,
+    40,
+    41
+  );
+  pop();
+
+  // col 2
+  push();
+  fill(43, 33, 130);
+  popArt(
+    (2 * width) / 3,
+    0,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    245,
+    141,
+    190,
+    250,
+    40,
+    41
+  );
+  pop();
+
+  push();
+  fill(141, 185, 10);
+  popArt(
+    (2 * width) / 3,
+    height / 3,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    248,
+    249,
+    109,
+    238,
+    104,
+    7
+  );
+  pop();
+
+  push();
+  fill(228, 4, 126);
+  popArt(
+    (2 * width) / 3,
+    (2 * height) / 3,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    238,
+    117,
+    13,
+    37,
+    30,
+    125
+  );
+  pop();
 }
 
 // -------------------------
