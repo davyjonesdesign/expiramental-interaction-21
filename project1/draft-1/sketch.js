@@ -4,7 +4,21 @@ var state0 = true;
 var state1 = false;
 var state2 = false;
 var state3 = false;
-var state4 = false;
+var column;
+var distinction;
+var face;
+var handPipe;
+var hand;
+var hat;
+var ladyUmbrella;
+var manScooter;
+var ronLisa;
+var woodySuit;
+var pour;
+var train;
+var mountain;
+var skiArm;
+var village;
 
 // -------------------------
 
@@ -13,6 +27,21 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   c1 = color(38, 31, 50);
   c2 = color(0, 0, 0);
+  column = loadImage("dada-imgs/column.png");
+  distinction = loadImage("dada-imgs/distinction.png");
+  face = loadImage("dada-imgs/face.png");
+  handPipe = loadImage("dada-imgs/hand-pipe.png");
+  hand = loadImage("dada-imgs/hand.png");
+  hat = loadImage("dada-imgs/hat.png");
+  ladyUmbrella = loadImage("dada-imgs/lady-umbrella.png");
+  manScooter = loadImage("dada-imgs/man-scooter.png");
+  ronLisa = loadImage("dada-imgs/ron-lisa.png");
+  woodySuit = loadImage("dada-imgs/woody-suit.png");
+  pour = loadImage("dada-imgs/pour.png");
+  train = loadImage("dada-imgs/railroad.png");
+  mountain = loadImage("dada-imgs/mountain-word.png");
+  skiArm = loadImage("dada-imgs/ski-arm.png");
+  village = loadImage("dada-imgs/village.png");
 }
 
 // -------------------------
@@ -48,7 +77,7 @@ function setGradient(x, y, w, h, c1, c2, axis) {
 }
 
 // pop art tile
-function popArt(x, y, w, h, r, g, b, r2, g2, b2) {
+function popArt(x, y, w, h, r, g, b, r2, g2, b2, r3, g3, b3) {
   rect(x, y, w, h);
   noStroke();
 
@@ -63,26 +92,45 @@ function popArt(x, y, w, h, r, g, b, r2, g2, b2) {
   arc(w / 3 + x, h / 2 + y, w / 4, 145, 0, PI);
 
   // inner mouth
-  fill(r, g, b);
+  fill(r3, g3, b3);
   arc(w / 3 + x, h / 2 + y - 1, w / 4 - w / 48, 100, 0, PI);
+  arc(w / 3 + x, h / 2 + y, w / 4 - w / 48, 15, PI, 0);
 
   //   teeth
-  fill(r2, g2, b2);
-  arc(w / 3 + x, h / 2 + y + 7, w / 4 - w / 22, h / 12, 0, PI);
-  rect(w / 4 + x - w / 52, h / 2 + y + h / 90, w / 4 - w / 22, h / 64);
+  fill(r, g, b);
+  arc(w / 3 + x, h / 2 + y + 5, w / 4 - w / 22, h / 12, 0, PI);
+  rect(w / 4 + x - w / 52, h / 2 + y, w / 4 - w / 22, h / 48);
   // toungue
-  arc(w / 3 + x, (2 * h) / 3 + y - h / 36, w / 16, 25, PI, 0);
+  arc(w / 3 + x - w / 60, (2 * h) / 3 + y - h / 30, w / 24, h / 24, PI, 0);
+  arc(w / 3 + x + w / 60, (2 * h) / 3 + y - h / 30, w / 24, h / 24, PI, 0);
   // outline
   noFill();
-  stroke(r, g, b);
-  strokeWeight(4);
-  arc(w / 3 + x, h / 2 + y - 1, w / 4 - w / 48, 100, 0, PI);
+  stroke(r3, g3, b3);
+  strokeWeight(6);
+  arc(w / 3 + x, h / 2 + y + 2, w / 4 - w / 48, 90, 0, PI);
+  arc(w / 3 + x, h / 2 + y, w / 4 - w / 48, 15, PI, 0);
 
   // speech bubble
   fill(r2, g2, b2);
+  triangle(
+    (2 * w) / 3 + x,
+    h / 2 + y,
+    (5 * w) / 9 + x,
+    h / 3 + y,
+    w / 2 + x,
+    (4 * h) / 7 + y
+  );
   ellipse((2 * w) / 3 + x, h / 3 + y, w / 3, h / 2);
-  ellipse(w / 2 + x + w / 48, h / 2 + y + h / 24, w / 16, h / 10);
-  ellipse(w / 2 + x - w / 48, h / 2 + y + h / 12, w / 32, h / 20);
+  //   noStroke();
+  triangle(
+    (2 * w) / 3 + x,
+    h / 2 + y,
+    (5 * w) / 9 + x,
+    h / 3 + y,
+    w / 2 + x,
+    (4 * h) / 7 + y
+  );
+  ellipse((2 * w) / 3 + x, h / 3 + y, w / 3, h / 2);
 
   textSize(60);
   textFont("Bangers");
@@ -271,7 +319,21 @@ function draw2() {
   // col 1
   push();
   fill(255, 253, 10);
-  popArt(0, 0, width / 3 + 0.33, height / 3 + 0.33, 141, 188, 14, 42, 36, 126);
+  popArt(
+    0,
+    0,
+    width / 3 + 0.33,
+    height / 3 + 0.33,
+    141,
+    188,
+    14,
+    42,
+    36,
+    126,
+    255,
+    253,
+    10
+  );
   pop();
 
   push();
@@ -286,7 +348,10 @@ function draw2() {
     248,
     121,
     68,
-    150
+    150,
+    247,
+    133,
+    10
   );
   pop();
 
@@ -302,7 +367,10 @@ function draw2() {
     232,
     233,
     7,
-    133
+    133,
+    34,
+    110,
+    98
   );
   pop();
 
@@ -319,7 +387,10 @@ function draw2() {
     109,
     229,
     6,
-    123
+    123,
+    3,
+    131,
+    240
   );
   pop();
 
@@ -335,7 +406,10 @@ function draw2() {
     248,
     33,
     33,
-    35
+    35,
+    228,
+    13,
+    31
   );
   pop();
 
@@ -351,11 +425,14 @@ function draw2() {
     52,
     250,
     40,
-    41
+    41,
+    255,
+    250,
+    8
   );
   pop();
 
-  // col 2
+  // col 3
   push();
   fill(43, 33, 130);
   popArt(
@@ -368,7 +445,10 @@ function draw2() {
     190,
     250,
     40,
-    41
+    41,
+    43,
+    33,
+    130
   );
   pop();
 
@@ -384,7 +464,10 @@ function draw2() {
     109,
     238,
     104,
-    7
+    7,
+    141,
+    185,
+    10
   );
   pop();
 
@@ -400,7 +483,10 @@ function draw2() {
     13,
     37,
     30,
-    125
+    125,
+    228,
+    4,
+    126
   );
   pop();
 }
@@ -411,28 +497,127 @@ function draw2() {
 function draw3() {
   noLoop();
   noStroke();
-  background(50);
-  fill(200);
-  ellipse(x, y, d, d);
-  textSize(40);
-  textFont("Geostar Fill");
-  textAlign(CENTER);
-  text("Esc(template)", 0, height / 2 - textSize() / 2, width);
-}
+  background(250, 240, 220);
 
-// -------------------------
+  // column
+  push();
+  translate (width - width / 20, height - height / 4 - height / 6);
+  rotate(PI / 2);
+  image(column, 0, 0, width / 4, height / 3);
+  pop();
 
-// 4th styled drawing
-function draw4() {
-  noLoop();
-  noStroke();
-  background(100);
-  fill(200);
-  ellipse(x, y, d, d);
-  textSize(40);
-  textFont("Geostar Fill");
+  // mountain
+  push();
+  translate(width / 2, height / 32);
+  image(mountain, 0, 0, width - width / 3, height - height / 4);
+  pop();
+
+  // village
+  push();
+  translate(width / 10, height - height / 3 );
+  image(village, 0, 0, width / 2 - width / 32, height / 3 + height / 32);
+  pop();
+
+  push();
+  translate(-width / 12, 0);
+  image(distinction, 0, 0, width / 4, height / 3);
+  pop();
+
+  // ski arm
+  push();
+  translate(width / 100, height / 4 );
+  rotate(- QUARTER_PI  / 3)
+  image(skiArm, 0, 0, width / 7, height / 4);
+  pop();
+
+  // pouring cup
+  push();
+  translate(width / 5 + width / 100, height / 36 );
+  rotate(QUARTER_PI / 5)
+  image(pour, 0, 0, width / 6, height / 3);
+  pop();
+
+  // suit
+  push();
+  translate(width / 16, height / 2 - height / 5);
+  image(woodySuit, 0, 0, width / 3, height / 2);
+  pop();
+
+  
+
+  // face
+  push();
+  translate(width / 2 + width / 84, height / 3  + height / 12);
+  rotate(-QUARTER_PI);
+  image(face, 0, 0, width / 3.3, height / 4 + height / 22);
+  pop();
+
+  // Ron Swanson Mona Lisa
+  push();
+  translate(width - width / 5, height / 4);
+  rotate(-QUARTER_PI / 4)
+  image(ronLisa, 0, 0, width / 6, height / 3);
+  pop();
+
+  // hand
+  push();
+  translate(width - width / 6 - width / 10, height / 22);
+  rotate(QUARTER_PI / 2)
+  image(hand, 0, 0, width / 5, height / 4);
+  pop();
+
+  // umbrella 
+  push();
+  translate(width / 3 + width / 20, height / 15);
+  rotate(- QUARTER_PI / 2)
+  image(ladyUmbrella, 0, 0, width / 3, height / 2);
+  pop();
+
+  // pipe and hand
+  push();
+  translate(width / 2  - width / 7, height - height / 4);
+  rotate( - QUARTER_PI);
+  rotate( - QUARTER_PI / 2);
+  image(handPipe, 0, 0, width / 6, height / 3);
+  pop();
+
+  // train
+  push();
+  translate(width / 2, height / 2);
+  image(train, 0, 0, width / 4 + width / 28, 5 * height / 9);
+  pop();
+
+  // hat
+  push();
+  translate(width / 2 - width / 24, height / 9);
+  rotate(QUARTER_PI);
+  image(hat, 0, 0, width / 5, height / 4);
+  pop();
+
+  // text
+  push();
+  translate( - width / 12, height / 32);
+  noFill();
+  stroke (255, 100, 100, 125); 
+  strokeWeight(10);
+  textSize(width / 4);
+  rotate(QUARTER_PI / 3)
+  textFont("Megrim");
   textAlign(CENTER);
-  text("Esc(template)", 0, height / 2 - textSize() / 2, width);
+  text("Esc", 0, height / 2 - textSize() / 2, width);
+  pop();
+
+  // man scooter
+  push();
+  translate(width / 64, height / 2 + height / 6);
+  rotate(-QUARTER_PI / 4)
+  image(manScooter, 0, 0, width / 10, height / 3);
+  pop();
+
+  
+
+  
+  
 }
 
 // -------------------------
@@ -447,8 +632,6 @@ function draw() {
     draw2();
   } else if (state3) {
     draw3();
-  } else if (state4) {
-    draw4();
   }
 }
 
@@ -469,10 +652,6 @@ function keyReleased() {
   } else if (keyCode === ESCAPE && state3 === true) {
     loop();
     state3 = !state3;
-    state4 = true;
-  } else if (keyCode === ESCAPE && state4 === true) {
-    loop();
-    state4 = !state4;
     state0 = true;
   }
 }
