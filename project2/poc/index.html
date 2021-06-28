@@ -1,0 +1,111 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sharkaganda</title>
+  </head>
+  <body>
+    <div id="app">
+      <transition :name="direction">
+        <router-view />
+      </transition>
+    </div>
+
+<!-- landing -->
+    <script type="text/x-template" id="landing">
+      <div class="view-container">
+        <div class="top-links">
+            <router-link  class="tooltip boater-link" to="/boaters" @click.native="eventBus.$emit('change-direction', 'slide-left')">
+                <p class="tooltiptext"> I am a boater!</p>
+                <div>
+                    <img src="imgs/sailor.png" alt="boater">
+                </div>
+            </router-link>
+            <router-link class="tooltip dolphin-link" to="/dolphins" @click.native="eventBus.$emit('change-direction', 'slide-right')">
+                <div>
+                    <img src="imgs/dolphin.png" alt="dolphin">
+                </div>
+                <p class="tooltiptext"> I am a dolphin!</p>
+            </router-link>
+        </div>
+        <h2 class="welcome-txt">Welcome to</h2>
+        <h1 class="club-txt">The Boater & Dolphin League <br>of Shark Suppression</h1>
+
+        <div class="bottom-link">
+            <router-link class="tooltip shark-link" to="/sharks" @click.native="eventBus.$emit('change-direction', 'slide-down')">
+                <div>
+                    <img src="imgs/shark.png" alt="boater">
+                </div>
+                <p class="tooltiptext">I am a shark!</p>
+            </router-link>
+        </div>
+      </div>
+    </script>
+
+<!-- boaters -->
+    <script type="text/x-template" id="boaters">
+      <div class="view-container boater-page_container">
+        <div class="boater-page_content">
+            <h2> Boaters' Manifesto </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium diam aliquet nibh est, pulvinar. Arcu venenatis, rhoncus mi vel egestas nisi eu nunc, purus. Lobortis senectus morbi varius eget tempor tincidunt. Pellentesque tortor sed mauris eu, in iaculis sed dolor consectetur.
+            </p>
+        </div>
+        <router-link  class="tooltip boater-link boaters-page_link" to="/" @click.native="eventBus.$emit('change-direction', 'slide-right')">
+            <p class="tooltiptext"> Take me Back</p>
+            <div>
+                <img src="imgs/sailor.png" alt="boater">
+            </div>
+        </router-link>
+      </div>
+    </script>
+
+<!-- dolphins -->
+    <script type="text/x-template" id="dolphins">
+        <div class="view-container boater-page_container dolphins-page_justify">
+          <router-link  class="tooltip boater-link boaters-page_link" to="/" @click.native="eventBus.$emit('change-direction', 'slide-left')">
+              <p class="tooltiptext"> Take me Back</p>
+              <div>
+                  <img src="imgs/dolphin.png" alt="dolphin">
+              </div>
+          </router-link>
+          <div class="boater-page_content">
+            <h2> Dolphins' Manifesto </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium diam aliquet nibh est, pulvinar. Arcu venenatis, rhoncus mi vel egestas nisi eu nunc, purus. Lobortis senectus morbi varius eget tempor tincidunt. Pellentesque tortor sed mauris eu, in iaculis sed dolor consectetur.
+            </p>
+        </div>
+        </div>
+      </script>
+
+<!-- shark -->
+    <script type="text/x-template" id="sharks">
+        <div class="view-container boater-page_container dolphins-page_justify sharks-page_content">
+            <div class="boater-page_content">
+                <h2> Dolphins' Manifesto </h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium diam aliquet nibh est, pulvinar. Arcu venenatis, rhoncus mi vel egestas nisi eu nunc, purus. Lobortis senectus morbi varius eget tempor tincidunt. Pellentesque tortor sed mauris eu, in iaculis sed dolor consectetur.
+                </p>
+            </div>
+            <router-link  class="tooltip boater-link boaters-page_link" to="/" @click.native="eventBus.$emit('change-direction', 'slide-up')">
+                <p class="tooltiptext"> Take me Back</p>
+                <div>
+                    <img src="imgs/shark2.png" alt="dolphin">
+                </div>
+            </router-link>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.6/vue-router.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

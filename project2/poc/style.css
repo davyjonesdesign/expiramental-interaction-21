@@ -1,0 +1,149 @@
+body {
+  font-family: "Source Code Pro", monospace;
+  overflow-x: hidden;
+  background: #0e1f47;
+  color: red;
+  margin: 0;
+}
+
+.view-container {
+  /* position: absolute; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+img {
+  transition: all 0.2s ease-in-out;
+}
+a:hover img {
+  transform: scale(1.05);
+}
+/* tooltip */
+.tooltip {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  color: white;
+  text-align: center;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* header text */
+.welcome-txt {
+  text-align: center;
+}
+.club-txt {
+  text-align: center;
+}
+
+.top-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.boater-link {
+  justify-content: flex-end;
+}
+.boater-link p {
+  max-height: 20px;
+  align-self: center;
+}
+.dolphin-link {
+  justify-content: flex-start;
+}
+.shark-link {
+  margin-top: 20px;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+}
+
+.boater-page_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.boater-page_content {
+    max-width: 600px;
+}
+.boaters-page_link {
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+}
+.boaters-page_link div {
+  height: 100vh;
+}
+.boaters-page_link div img {
+    height: 100vh;
+}
+.dolphins-page_justify {
+    justify-content: flex-start;
+}
+.sharks-page_content {
+    flex-direction: column;
+}
+.sharks-page_content div img {
+    width: 100vw;
+    height: auto;
+}
+
+/* slides */
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-down-enter-active,
+.slide-down-leave-active,
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-left-enter {
+  transform: translateX(100%);
+}
+
+.slide-left-leave-to {
+  transform: translateX(-100%);
+}
+
+.slide-right-enter {
+  transform: translateX(-100%);
+}
+
+.slide-right-leave-to {
+  transform: translateX(100%);
+}
+
+.slide-down-enter {
+    transform: translateY(100%);
+  }
+  
+.slide-down-leave-to {
+    transform: translateY(-100%);
+}
+.slide-up-enter {
+    transform: translateY(-100%);
+  }
+  
+.slide-up-leave-to {
+    transform: translateY(100%);
+}
