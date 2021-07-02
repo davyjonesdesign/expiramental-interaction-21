@@ -1,0 +1,132 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sharkaganda</title>
+  </head>
+  <body>
+    <div id="app">
+      <transition :name="direction">
+        <router-view />
+      </transition>
+    </div>
+
+<!-- landing -->
+    <script type="text/x-template" id="landing">
+      <div class="view-container">
+        <div class="top-links">
+            <router-link  class="tooltip boater-link" to="/boaters" @click.native="eventBus.$emit('change-direction', 'slide-left')">
+                <p class="tooltiptext"> I am a boater!</p>
+                <div>
+                    <img src="imgs/sailor.png" alt="boater">
+                </div>
+            </router-link>
+            <router-link class="tooltip dolphin-link" to="/dolphins" @click.native="eventBus.$emit('change-direction', 'slide-right')">
+                <div>
+                    <img src="imgs/dolphin.png" alt="dolphin">
+                </div>
+                <p class="tooltiptext"> I am a dolphin!</p>
+            </router-link>
+        </div>
+        <h2 class="club-txt">The Boater & Dolphin League of Shark Suppression</h2>
+
+        <div class="bottom-link">
+            <router-link class="tooltip shark-link" to="/sharks" @click.native="eventBus.$emit('change-direction', 'slide-down')">
+                <div>
+                    <img src="imgs/shark.png" alt="boater">
+                </div>
+                <p class="tooltiptext">I am a shark!</p>
+            </router-link>
+        </div>
+      </div>
+    </script>
+
+<!-- boaters -->
+    <script type="text/x-template" id="boaters">
+      <div class="view-container boater-page_container">
+        <div class="boater-page_content">
+            <h2> Boaters' Manifesto </h2>
+            <p>
+               We the boaters in order to redeem the seas, hereby condemn all sharks everywhere for the following reasons:
+            </p>
+            <ul>
+                <li>
+                    Sharks refuse to wave back. As boaters, we have made many attempts to offer a friendly wave and are met with not so much as a nod.
+                </li>
+                <li>
+                    Sharks are irreputable with finances. You give them a penny, they’ll lend it out right away and then charge double. They are loan sharks, through and through.
+                </li>
+                <li>
+                    They also do not have backbones, or any other kind of bone for that matter. They are utterly spineless, cowardly sea suckers. 
+                </li>
+            </ul>
+        </div>
+        <router-link  class="tooltip boater-link boaters-page_link" to="/" @click.native="eventBus.$emit('change-direction', 'slide-right')">
+            <p class="tooltiptext"> Take me Back</p>
+            <div>
+                <img src="imgs/sailor.png" alt="boater">
+            </div>
+        </router-link>
+      </div>
+    </script>
+
+<!-- dolphins -->
+    <script type="text/x-template" id="dolphins">
+        <div class="view-container boater-page_container dolphins-page_justify">
+          <router-link  class="tooltip boater-link boaters-page_link" to="/" @click.native="eventBus.$emit('change-direction', 'slide-left')">
+              <p class="tooltiptext"> Take me Back</p>
+              <div>
+                  <img src="imgs/dolphin.png" alt="dolphin">
+              </div>
+          </router-link>
+          <div class="boater-page_content">
+            <h2> Dolphins' Manifesto </h2>
+            <p>
+                We the dolphins in order to redeem the seas, hereby condemn all sharks everywhere for the following reasons:
+            </p>
+            <ul>
+                <li>
+                    Sharks are real creeps. They’re constantly lurking about in inconvenient locations. Just because they have fantastic night vision and can see through the dark in color doesn’t mean they should get to creep around without punitive consequences.
+                </li>
+                <li>
+                    Sharks are greedy with their resources. Some sharks have up to 300 teeth at various stages in their mouth at any given time. What, we ask you, are they doing with all that dental gear? Why shouldn’t they share the wealth with other sea creatures?
+                </li>
+                <li>
+                    As dolphins, we value family and togetherness. But sharks sure don’t. Oh no, you never see sharks swimming together. They’re always hunting alone, swimming alone, sleeping at night alone… it makes us feel sad for them. Yet all the times we have tried to join them they have swum far and fast away from us!
+                </li>
+            </ul>
+        </div>
+        </div>
+      </script>
+
+<!-- shark -->
+    <script type="text/x-template" id="sharks">
+        <div class="view-container boater-page_container dolphins-page_justify sharks-page_content">
+            <div class="boater-page_content">
+                <p>
+                    First of all, the audacity. You’ve got to have pretty big set of gills to show up to this website, you cartilaginous Selachimorpha. You big ugly Elasmobranchii, I bet the mother shark that carried you for more than a year regrets the day you swam into the picture! You omnivorous, inconsiderate ocean drifter. You’re like the homeless hobo of the sea, migrating over two thousand miles a year. What gives you the right? Hm? You may be an apex predator, but to us you’re just a sandpapery sea sucker.
+                </p>
+            </div>
+            <router-link  class="tooltip boater-link boaters-page_link" to="/" @click.native="eventBus.$emit('change-direction', 'slide-up')">
+                <div>
+                    <img src="imgs/shark2.png" alt="dolphin">
+                </div>
+                <p class="tooltiptext"> Take me Back</p>
+                
+            </router-link>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.6/vue-router.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
