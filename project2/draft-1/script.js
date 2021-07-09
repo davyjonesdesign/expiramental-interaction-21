@@ -12,6 +12,11 @@ const Component4 = {
     template: '#sharks'
 };
 
+const NotFoundComponent = {
+  template: '#NotFound'
+};
+
+
 Vue.component('landing', {
   template: '#landing'
 })
@@ -20,12 +25,12 @@ const routes = [
     { path: '', component: Component1 },
     { path: '/boaters', component: Component2 },
     { path: '/dolphins', component: Component3 },
-    { path: '/sharks', component: Component4 }
-
+    { path: '/sharks', component: Component4 },
+    { path: '/:catchAll(.*)', component: NotFoundComponent, name: 'NotFound'}
 ]
 
 const router = new VueRouter({
-    routes
+  routes
 });
 
 const eventBus = new Vue({});

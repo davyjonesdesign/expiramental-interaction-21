@@ -125,6 +125,23 @@
         </div>
     </script>
 
+<!-- Not Found -->
+    <script type="text/x-template" id="NotFound">
+        <div class="view-container boater-page_container dolphins-page_justify sharks-page_content">
+            <div class="boater-page_content">
+                <h2>Oopsies</h2>
+                <p>
+                    Looks like you've lost your way. Not to worry, we've got you covered. We'll set you straight. Because that's what <b>The Boater & Dolphin League of Shark Suppression</b> is all about!
+                </p>
+            </div>
+            <router-link  class="tooltip boater-link boaters-page_link" to="/" @click.native="eventBus.$emit('change-direction', 'slide-up')">
+                <div>
+                    <img src="imgs/shark.png" alt="shark">
+                </div>
+                <p class="tooltiptext"> Take me Home</p>
+            </router-link>
+        </div>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.6/vue-router.min.js"></script>
     <script src="script.js"></script>
