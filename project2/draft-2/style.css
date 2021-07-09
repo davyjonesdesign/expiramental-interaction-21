@@ -231,17 +231,15 @@ a:hover img {
 }
 .shark-link-back img {
   height: 85vh;
+  align-self: flex-end;
+  justify-self: flex-end;
+  /* position: fixed; */
+  bottom: 0;
 }
 .shark-link-back .tooltiptext {
   position: relative;
   z-index: 1000;
   margin-bottom: 0;
-}
-.sharks-page_content div img {
-  align-self: flex-start;
-  height: 90vh;
-  position: fixed;
-  bottom: -50px;
 }
 
 /* arrow */
