@@ -34,7 +34,7 @@ function draw() {
   for (var y = 0; y < cols; y++) {
     xoff = 0;
     for (var x = 0; x < rows; x++) {
-      terrain[y][x] = map(noise(xoff, yoff), 0, 1, (mouseY / 100 ) - 10, (mouseY / 7) + 10);
+      terrain[y][x] = map(noise(xoff, yoff), 0, 1, (mouseY / 100 ) - 10, (mouseY / 8) + 10);
       xoff += 0.2;
     }
     yoff += 0.3;
