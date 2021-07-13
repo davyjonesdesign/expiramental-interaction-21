@@ -3,6 +3,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +43,7 @@
                 
             </router-link>
         </div>
-        <h2 class="club-txt">The Boater & Dolphin League of Shark Suppression</h2>
+        <h2 class="club-txt">The Boater & Dolphin League <br><span class="club-txt_of"> - of - </span><br><span class="club-txt_bottom">Shark Suppression</span></h2>
 
         <div class="bottom-link">
             <router-link class="tooltip shark-link" to="/sharks" @click.native="eventBus.$emit('change-direction', 'slide-down')">
@@ -112,7 +115,7 @@
                     <strong>Sharks are greedy with their resources.</strong> Some sharks have up to <strong>300 teeth</strong> at various stages in their mouth at any given time. What, we ask you, are they doing with all that dental gear? <strong>Why shouldn’t they share the wealth with other sea creatures?</strong>
                 </li>
                 <li>
-                    As dolphins, we value family and togetherness. <strong>But sharks sure don’t.</strong> Oh no, you never see sharks swimming together. They’re always <strong>hunting alone</strong>, <strong>hunting alone</strong>, <strong>sleeping at night alone</strong>… it makes us feel sad for them. Yet all the times we have tried to join them they have swum far and fast away from us!
+                    As dolphins, we value family and togetherness. <strong>But sharks sure don’t.</strong> Oh no, you never see sharks swimming together. They’re always <strong>hunting alone</strong>, <strong>swimming alone</strong>, <strong>sleeping at night alone</strong>… it makes us feel sad for them. Yet all the times we have tried to join them they have swum far and fast away from us!
                 </li>
             </ul>
         </div>

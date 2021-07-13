@@ -56,11 +56,10 @@ li:hover {
   transform: scale(1.05);
   background: #ff998b;
   color: #1a2235;
-  font-weight: 600;
+  font-weight: 400;
 }
 li:hover strong {
   color: white;
-  text-shadow: 2px 2px #1a2235;
 }
 img {
   transition: all 0.2s ease-in-out;
@@ -92,10 +91,26 @@ a:hover img {
   text-align: center;
 }
 .club-txt {
-  /* text-shadow: 1px 1px white; */
+  font-size: 22px;
+  letter-spacing: 0;
+  text-transform: capitalize;
   text-align: center;
+  border-bottom: none;
+}
+
+.club-txt_of {
+  letter-spacing: 0pc;
+  text-transform: lowercase;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.club-txt_bottom {
+  line-height: 1;
   letter-spacing: 2px;
-  border-bottom: 1px solid #ff998b;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 /* speech bubble arrows */
@@ -217,11 +232,13 @@ a:hover img {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  justify-content: center;
   height: 100vh;
 }
 .shark-page_content {
-  margin: 10vh 40px;
-  align-self: center;
+  max-width: 20vw;
+  margin: 0;
+  align-self: flex-start;
 }
 .shark-link-back {
   flex-direction: column;
@@ -230,10 +247,9 @@ a:hover img {
   margin-bottom: 0;
 }
 .shark-link-back img {
-  height: 85vh;
+  height: 65vh;
   align-self: flex-end;
   justify-self: flex-end;
-  /* position: fixed; */
   bottom: 0;
 }
 .shark-link-back .tooltiptext {
