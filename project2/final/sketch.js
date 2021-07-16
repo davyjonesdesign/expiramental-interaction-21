@@ -1,14 +1,14 @@
 var canvas;
 var w = 2500;
 var h = 2500;
-var scl = 30;
+var scl = 40;
 var terrain = [];
 var wave = 0;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight, WEBGL);
   canvas.position(0, 0);
-  canvas.style("z-index", "-1");
+  canvas.style("z-index", "-2");
   cols = w / scl;
   rows = h / scl;
   var yoff = 0;
@@ -21,10 +21,27 @@ function setup() {
       terrain[y][x] = 0;
     }
   }
+  freeze();
+  unfreeze();
+  
+}
+function freeze() {
+  var frButton = createButton('unfreeze');
+  frButton.position(windowWidth - 80, windowHeight - 35);
+  frButton.mouseClicked(unfreeze);
+  noLoop();
+}
+function unfreeze() {
+  loop();
+  var unButton = createButton('freeze');
+  unButton.position(windowWidth - 140, windowHeight - 35);
+  unButton.mouseClicked(freeze);
+
 }
 
 function draw() {
-  wave -= 0.02 + (mouseY / 9000);
+ 
+  wave -= 0.01 + (mouseY / 20000);
 
   // seawave because of yoff
 
@@ -34,7 +51,7 @@ function draw() {
   for (var y = 0; y < cols; y++) {
     xoff = 0;
     for (var x = 0; x < rows; x++) {
-      terrain[y][x] = map(noise(xoff, yoff), 0, 1, (mouseY / 150 ) - 8, (mouseY / 8) + 8);
+      terrain[y][x] = map(noise(xoff, yoff), 0, 1, (mouseY / 250) - 10, (mouseY / 20) + 10);
       xoff += 0.2;
     }
     yoff += 0.3;
@@ -48,7 +65,7 @@ function draw() {
 
   translate(0, -200);
   rotateX(PI / 3);
-  translate(-windowWidth / 1.3 , -windowHeight / 2);
+  translate(-windowWidth / 1.3 , -windowHeight / 1.3);
 
   for (var y = 0; y < cols; y++) {
     beginShape(TRIANGLE_STRIP);
@@ -62,4 +79,6 @@ function draw() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-  }
+}
+
+
